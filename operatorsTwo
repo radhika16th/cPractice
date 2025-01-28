@@ -1,0 +1,185 @@
+include <stdio.h>
+
+int main(void) {
+
+  /*//RELATIONAL OPERATORS
+  // return 1 or 0, 1 being true, 0 being false
+  // ==      equal to
+  // x == 5 would be 1 if x has the value 5, otherwise it would be 0
+  
+  int var = 5;
+  printf("%d\n", var == 5);
+
+  printf("%d\n", 5 == 5.0);
+  // > greater than 5 > 3 -> true
+  // < less than 5 < 3 -> false
+  // >=
+  // <= 
+  //both of those have the same logic
+  printf("%d and %d\n", 5 > 3, 5 < 3);
+
+  //!= -> not equal to 
+  //5 != 3 returns 1
+  //99 != 99 returns 0 */
+
+  /*//Practice problem one: 
+  
+  int x1, y1, x2, y2;
+
+  printf("enter first x value: ");
+  scanf("%d", &x1);
+  printf("enter first y value: ");
+  scanf("%d", &y1);
+
+  printf("enter second x value: ");
+  scanf("%d", &x2);
+  printf("enter second y value: ");
+  scanf("%d", &y2);
+
+  float x = x1 + x2;
+  x /= 2;
+  float y = y2 + y1;
+  y /= 2;
+
+  printf("the midpoint is: (%f, %f)", x, y);*/
+
+  /*//Practice problem 2:
+  
+  int year;
+
+  printf("enter year: ");
+  scanf("%d", &year);
+
+  if ( ((year % 4 == 0) && (year % 100 != 0)) || (year % 400 == 0)){
+    printf("leap year");
+  }
+  else{
+    printf("not leap year");
+  }*/
+
+  /*// Homework problem 1:
+  int num;
+  printf("enter number from one to seven: ");
+  scanf("%d", &num);
+
+if (num == 1){
+    printf("monday");
+  }
+else if (num == 2){
+    printf("tuesday");
+  }
+else if (num == 3){
+    printf("wednesday");
+  }
+else if (num == 4){
+    printf("thursday");
+  }
+else if (num == 5){
+    printf("friday");
+  }
+else if (num == 6){
+    printf("saturday");
+  }
+else if (num == 7){
+    printf("sunday");
+  }
+else{
+  printf("wrong number entered");
+}
+  
+  // Homework problem 2:
+  int angleOne, angleTwo, angleThree;
+  int sideOne, sideTwo, sideThree;
+
+  printf("\nenter angleOne: ");
+  scanf("%d", &angleOne);
+  printf("enter angleTwo: ");
+  scanf("%d", &angleTwo);
+  printf("enter angleThree: ");
+  scanf("%d", &angleThree);
+
+  printf("enter sideOne: ");
+  scanf("%d", &sideOne);
+  printf("enter sideTwo: ");
+  scanf("%d", &sideTwo);
+  printf("enter sideThree: ");
+  scanf("%d", &sideThree);
+
+  int sum = angleOne + angleTwo + angleThree;
+  if ((sum == 180) && ((sideOne+sideTwo > sideThree) && (sideTwo + sideThree > sideOne) && (sideThree + sideOne > sideTwo))){
+    printf("Valid Triangle");
+  }
+  else{
+    printf("Invalid Triangle");
+  }*/
+
+  //Write a program to count the way a dollar amount can be split up into the least amount of bills possible. 
+  /*500: 1
+100: 0
+50: 1
+20: 1
+10: 0
+5: 1
+2: 0
+1: 0*/ 
+
+  int money;
+  int fiveHundred, hundred, fifty, twenty, ten, five, two, one;
+
+  printf("Enter the money: ");
+  scanf("%d", &money);
+
+  int totalMoney = money;
+
+  fiveHundred = money / 500;
+  money %= 500;
+
+  hundred = money / 100;
+  money = money % 100;
+
+  fifty = money / 50;
+  money = money % 50;
+
+  twenty = money / 20;
+  money = money % 20;
+
+  ten = money / 10;
+  money = money % 10;
+
+  five = money / 5;
+  money = money % 5;
+
+  two = money / 2;
+  money = money % 2;
+
+  one = money;
+
+  printf("%d$ can be split into: ", totalMoney);
+
+  if (fiveHundred > 0){
+    printf("\n %d five hundreds", fiveHundred);
+  }
+  if (hundred > 0){
+    printf("\n %d hundreds", hundred);
+  }
+  if (fifty > 0){
+    printf("\n %d fifties", fifty);
+  }
+  if (twenty > 0){
+    printf("\n %d twenties", twenty);
+  }
+  if (ten > 0){
+    printf("\n %d tens", ten);
+  }
+  if (five > 0){
+    printf("\n %d fives", five);
+  }
+  if (two > 0){
+    printf("\n %d twos", two);
+  }
+  if (one > 0){
+    printf("\n %d ones", one);
+  }
+
+  return 0;
+}
