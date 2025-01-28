@@ -1,0 +1,42 @@
+#include <stdio.h>
+
+int main(void) {
+  int arr[9];
+  int size = sizeof(arr)/sizeof(arr[0]); 
+
+  for(int i = 0; i < size; ++i)
+  {
+    printf("Enter element %d: ", i);
+    scanf("%d", &arr[i]);
+  } 
+  for(int i = 0; i < size; ++i)
+  {
+    printf("Element %d: %d\n", i, arr[i]);
+  }
+  
+  
+  if( ((arr[0] == arr[1]) && (arr[1] == arr[2])) && ((arr[3] == arr[4]) && (arr[4] == arr[5])))
+  {
+    printf("first 3 r equal, second 3 r equal");
+  }
+
+  //out of arr[0], arr[1], and arr[2] we wanted to know if only 2 of them are equal to 0 and figure out which one is not equal to the rest?
+  /*
+  arr[0] = 1
+  arr[1] = 0
+  arr[2] = 0
+  if(arr[1] == arr[2]), then 
+
+  */
+  if(( (arr[0] == 0) + (arr[1] == 0) + (arr[2] == 0) ) == 2)
+  {
+    for(int i = 0; i < 3; ++i)
+    {
+      if(arr[i] == 1)
+      {
+        printf("AT INDEX %d THERE IS A 1!!", i);
+      }
+    }
+
+  }
+}
