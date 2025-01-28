@@ -1,0 +1,112 @@
+#include <stdio.h>
+#include <stdbool.h>
+
+char isWin(char board[9])
+{
+  //all horizontal cases
+  for(int i = 0; i < 3; i++)
+  {
+    if(board[3*i + 0] == '_')
+    {
+      continue;
+    }
+    if((board[3*i + 0] == board[3*i + 1]) && (board[3*i +1] == board[3*i + 2]) )
+    {
+      return board[i];
+    }
+  }
+  //all vertical
+  //left vertical
+  for(int i = 0; i < 3; i++)
+  {
+      if(board[i] == '_')
+      {
+        continue;
+      }
+      if((board[i] == board[i+3]) && (board[i+3] == board[i+6]))
+      {
+          return board[i];
+      }
+  }
+  if((board[0] == board[4]) && (board[4] == board[8])&& (board[0] != '_'))
+  {
+    return board[0];
+  }
+  else if ((board[2] == board[4]) && (board[4] == board[6]) == (board[2] != '_'))
+  {
+    return board[2];
+  }
+  //over here: nobody has won
+
+  for(int i = 0; i < 9; ++i)
+  {
+    if(board[i] == '_')
+    {
+      return 'n';
+    }
+  }
+  return 't';
+}
+void printBoard(char board[9])
+{
+  for(int i = 0; i < 3; ++i)
+  {
+    for(int j = 0; j < 3; ++j)
+    {
+      printf("%c  ", board[3 * i + j]);
+    }
+    printf("\n");
+  }
+}
+
+int main()
+{
+  char board[9] = {'_', '_', '_', '_', '_', '_','_', '_', '_'};
+  int pos; //range is from 1 - 9
+
+  char curSym;
+  for(int turn = 0; turn < 9;)
+  {
+      if(turn %2 == 0)
+      {
+        printf("Player 1 move: ");
+        curSym = 'X';
+      }
+      else
+      {
+        printf("Player 2 move: ");
+        curSym = 'O';
+      }
+      scanf("%d", &pos);
+      
+      // if((pos == "X") && (pos == "O"))
+      // {
+      //   printf("not valid");
+      // }
+      
+      if(!((pos <= 9) && (pos >= 1)))
+      {
+        printf("Not valid... please enter again\n\n");
+        continue; 
+      }
+      board[pos - 1] = curSym;
+      
+      printf("Current board: \n\n");
+      printBoard(board);
+
+      switch(isWin(board))
+      {
+        case 'X':
+          printf("X WINS!!");
+          break;
+        case 'O':
+          printf("O WINS!!");
+          break;
+        case 't':
+          printf("It's a tie!!");
+          break;
+      }
+
+      ++turn;
+  }
+}
