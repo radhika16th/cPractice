@@ -1,0 +1,75 @@
+#include <stdio.h>
+
+int main(void) {
+  /*// decimal; takes up same memery space
+  float x = 6.34567;
+  printf("%f\n", x);
+
+  //more precise than float; %g can be used too
+  double y = 7.123456789876543212345678;
+  printf("%lf\n",y);
+
+  //huger values
+  long double z = 12345.8765;
+  printf("%Lf\n",z);
+
+  //character
+  char a = 'k';
+  printf("%c\n", a);
+  printf("%d is ASCII of k", a);
+
+  //input; need to put % and type what variable it is and then write scanf 
+  int age;
+  printf("ENTER AGE: ");
+  scanf("%d", &age); */
+
+  /*int month;
+  int day;
+  int year;
+
+  printf("enter month: ");
+  scanf("%d", &month);
+  printf("enter day: ");
+  scanf("%d", &day);
+  printf("enter year: ");
+  scanf("%d", &year);
+
+  printf("%d\\%d\\%d", month,day,year);*/
+
+  int month;
+  int day;
+  int year;
+  int age;
+  int bankBalance;
+  char first;
+  char last;
+
+  int user;
+  printf("how many people do you want to enter: ");
+  scanf("%d", &user);
+
+  for (int i = 1; i <= user; i++){
+  printf("\nperson %d: \n", i);
+  printf("enter age: ");
+  scanf("%d", &age);
+  printf("enter birth month: ");
+  scanf("%d", &month);
+  printf("enter birth day: ");
+  scanf("%d", &day);
+  printf("enter birth year: ");
+  scanf("%d", &year);
+  printf("enter bankBalance: ");
+  scanf("%d", &bankBalance);
+  printf("enter first name intial: ");
+  getchar();
+  scanf("%c", &first);
+  printf("enter last name initial: ");
+  getchar();
+  scanf("%c", &last);
+
+  printf("\nAge\t\tdob\t\t\tbank balance\tFI\t\tLI\n");
+  printf("%d\t\t%d\\%d\\%d\t%d\t\t\t\t%c\t\t%c\n", age, month, day, year, bankBalance, first, last);
+  }
+
+  return 0;
+}
