@@ -1,0 +1,25 @@
+#include <stdio.h>
+
+int main(void) {
+  printf("Person\t\t\t\tQuote\t\t\t\tAge\n");
+  printf("hi\t\t\t\t\t\"bubblegum\"\t\t\t1000\n");
+  printf("wydm   \t\t\t\t\"what did u say?\"\t15\n\n");
+
+  //return 0; -> dont need to put in it
+
+  // int stores integers (positive and negative) and unsigned int stores only positive integers
+  // short stores small amount of int value that takes up less space with both positive and negative values and unsigned short is the same thing but for only positive numbers
+
+  /*Create a int variable called a, then create an unsigned int variable called b, then create a short variable called c, and finally, create a unsigned short variable called d.
+
+  Then you need to use a single printf statement to print all of these on the same line. 
+
+  For integers, you use %d, you must google and figure out the command to print the other 3 types.*/
+
+  int a = 1;
+  unsigned int b = 2;
+  short c = 3;
+  unsigned short d = 4;
+
+  printf("int varible is %d; unsigned int variable is %u; short is %hi and unsigned short is %hu", a, b, c, d);
+}
